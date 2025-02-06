@@ -10,7 +10,7 @@ export const msalConfig: Configuration = {
     authority: ML_AUTHORITY_URL,
     knownAuthorities: [],
     navigateToLoginRequestUrl: true,
-    redirectUri: "http://localhost:5173",
+    redirectUri: "https://hrmdynamics-6e2f3571dbd4.herokuapp.com",
     postLogoutRedirectUri: '/',
   },
   cache: {
