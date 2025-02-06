@@ -58,10 +58,7 @@
 // ];
 
 // const routes = [
-//   {
-//     path: APP_PATHS.home.get(),
-//     element: <HomePage />,
-//   },
+ 
 //   {
 //     path: APP_PATHS.properties.get(),
 //     element: <PropertiesPage />,
@@ -116,7 +113,7 @@ import ProtectedRoutes from '@shared/authGuard/ProtectedRoutes';
 import NonProtectedRoutes from '@shared/authGuard/NonProtectedRoutes';
 import { CandidatesProfilePage } from '@pages/CandidateProfile/CandidateProfile.page';
 import ScrollToTop from '@shared/authGuard/ScrollToTop/ScrollToTop';
-
+import { Navigate, useLocation } from "react-router-dom";
 
 
 const routes = [
@@ -154,4 +151,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: authRoutes,
   },
+  {
+    path: '*',
+    element: <Navigate to={APP_PATHS.dashboard.get()} replace />,
+  }
 ]);
+
